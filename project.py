@@ -110,9 +110,12 @@ def print_help():
 Available Commands:
 - add: Add a new word to the dictionary.
 - remove: Remove a word from the dictionary.
+- words: Show all words with their translations
+- get: Get translation
 - quiz: Enter quiz mode to test your knowledge.
 - help: Display available commands and usage instructions.
-- exit: Exit the program.""")
+- exit: Exit the program.
+""")
 
 def add_word_command(dictionary):
     word = input("Enter the word you want to add: ").strip().lower()
