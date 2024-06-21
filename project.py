@@ -1,5 +1,6 @@
-import csv
-import os
+import csv  # for saving words in a CSV file
+import os  # for checking if the file exists
+from tabulate import tabulate  # for pretty print
 
 
 class Dictionary:
@@ -115,6 +116,9 @@ Type 'help' to see available commands.""")
                 get_words_command()
             elif command.startswith('help'):
                 print_help()
+            elif command.startswith('exit'):
+                print("Exiting programm...")
+                break
         else:
             print(f"Unknown command {command}. Type 'help' to see available commands")
 
@@ -167,8 +171,11 @@ def get_words_command():
         if len(words_dict) == 0:
             print("There are no words yet :(")
         else:
-            for el in Dictionary.get_words():
-                print(el)
+
+            for el in words_dict:
+                word, translation, examples = el.values()
+                print(tabulate([[word, translation, examples]],
+                               ['Word', 'Translation', 'Examples']))
     else:
         print(words_dict)
 
