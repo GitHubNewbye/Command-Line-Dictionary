@@ -1,3 +1,5 @@
+import os.path
+
 from dictionary import Dictionary
 from random import choice, shuffle
 from termcolor import colored
@@ -15,8 +17,13 @@ class Quiz(Dictionary):
     def __are_enough_words(self):
         return len(self.get_words()) >= self.__MINWORDSCOUNT
 
+    def __is_file(self):
+        return os.path.isfile('dictionary.csv')
+
     def start(self):
-        if not self.__are_enough_words():
+        if not self.__is_file():
+            print("Missing dictionary file")
+        elif not self.__are_enough_words():
             print(f"There are not enough words to start the quiz. There must be at least {self.__MINWORDSCOUNT} words")
         else:
             print("Hi :) With quiz you can check your knowledge of words.\n"
