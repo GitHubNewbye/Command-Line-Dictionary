@@ -2,7 +2,7 @@ import os
 from tabulate import tabulate  # for pretty print
 from dictionary import Dictionary  # main class for working with dictionary
 from quiz import Quiz  # for quiz mode
-from termcolor import colored # for styling
+from termcolor import colored  # for styling
 
 
 def main():
@@ -80,18 +80,16 @@ def get_translation_command(dictionary):
     print(translation if translation else "No such word in dictionary")
 
 
-
 def get_words_command():
     words_dict = Dictionary.get_words()
     if isinstance(words_dict, list):
         if len(words_dict) == 0:
             print("There are no words yet :(")
         else:
-
             for el in words_dict:
                 word, translation, examples = el.values()
                 print(tabulate([[word, translation, examples]],
-                               ['Word', 'Translation', 'Examples']))
+                               ['Word', 'Translation', 'Examples'], tablefmt='pretty'))
     else:
         print(words_dict)
 
