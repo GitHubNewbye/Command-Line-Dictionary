@@ -1,18 +1,18 @@
-import csv  # for saving words in a CSV file
-import os  # for checking if the file exists
+import os
 from tabulate import tabulate  # for pretty print
 from dictionary import Dictionary  # main class for working with dictionary
 from quiz import Quiz  # for quiz mode
+from termcolor import colored # for styling
 
 
 def main():
     my_dict = Dictionary()
-    print("""Welcome to the Command-line Dictionary!
-Type 'help' to see available commands.""")
+    print(colored("""Welcome to the Command-line Dictionary!
+Type 'help' to see available commands.""", "green"))
     quiz_mode = False
 
     while True:
-        command = input("Enter command: ").strip().lower()
+        command = input(colored("Enter command: ", "green")).strip().lower()
         if command in my_dict.COMMANDS:
             if command.startswith('add'):
                 add_word_command(my_dict)
@@ -31,7 +31,7 @@ Type 'help' to see available commands.""")
                 print("Exiting programm...")
                 break
         else:
-            print(f"Unknown command {command}. Type 'help' to see available commands")
+            print(colored(f"Unknown command {command}. Type 'help' to see available commands", "red"))
 
     if quiz_mode:
         start_quiz()
@@ -76,7 +76,9 @@ def remove_word_command(dictionary):
 
 def get_translation_command(dictionary):
     word = input("Enter the word you want to translate: ")
-    print(dictionary.get_translation(word))
+    translation = dictionary.get_translation(word)
+    print(translation if translation else "No such word in dictionary")
+
 
 
 def get_words_command():

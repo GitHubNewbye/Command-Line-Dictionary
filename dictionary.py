@@ -1,3 +1,6 @@
+from termcolor import colored
+import os
+import csv
 class Dictionary:
     FILENAME = 'dictionary.csv'
     FIELDNAMES = ('word', 'translation', 'examples')
