@@ -110,7 +110,7 @@ Example: 1 7 """)
             answers = {'correct_answers': [], 'incorrect_answers': []}
 
         print(f"You got {self.points} points")
-        print(colored(f"Correct answers: {self.__correct_answers}\n", "green", attrs=['bold']))
+        print(colored(f"Correct answers: {self.__correct_answers}", "green", attrs=['bold']))
 
         if answers['correct_answers']:
             for correct_answer in answers['correct_answers']:
