@@ -81,7 +81,7 @@ class Dictionary:
                 reader = csv.DictReader(file)
                 for el in reader:
                     if el['word'].lower() == word.lower():
-                        return f"Translation: {el['translation']}\nExamples: {el['examples']}"
+                        return {"Translation": el['translation'], "Examples": el['examples']}
                 return False
         except Exception as e:
             print(f"Error: {e}")
