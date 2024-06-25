@@ -1,6 +1,6 @@
 # Command-line Dictionary Application
 
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/bI0PCldK5fM
 
 ## Overview
 
