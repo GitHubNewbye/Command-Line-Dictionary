@@ -61,7 +61,7 @@ class Quiz(Dictionary):
                 self.__incorrect_answers += 1
 
         self.points = self.__correct_answers
-        self.display_results()
+        self.__display_results()
 
     def match_mode(self):
         print("""Type the first word's and the second word's numbers separated by space to match the words.
@@ -107,12 +107,12 @@ Example: 1 7 """)
                 print(colored("Invalid input format. Please enter numbers separated by space.", "red"))
 
         self.points = self.__correct_answers
-        self.display_results(answers)
+        self.__display_results(answers)
 
     def get_random_word(self):
         return choice(self.get_words())['word']
 
-    def display_results(self, answers=None):
+    def __display_results(self, answers=None):
         if answers is None:
             answers = {'correct_answers': [], 'incorrect_answers': []}
 
