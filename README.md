@@ -7,7 +7,7 @@
 Command-line Dictionary application is a simple tool for easy creating your own simple dictionary of words. There is
 also a quiz mode included which will help you to memorize the words and their translations. The main thing is that the
 adding of words is completely depended on the user and the user decides which word he would like to add to his
-dictionary. You also can add some examples of usage the words. So with this Command-line Dictionary you can
+dictionary. You also can add some examples of usage of the words. So with this Command-line Dictionary, you can
 
 1. #### Add Words and Their Translations:
 
@@ -25,7 +25,7 @@ Display all the words currently stored in your dictionary along with their trans
 
 Enter quiz mode to test your knowledge and reinforce your learning.
 
-## Requirments
+## Requirements
 
 1. `Python 3.x`
 2. `tabulate` library(can be installed via pip)
@@ -43,7 +43,7 @@ The project contains the following files:
 4. `test_project.py`
 
 You can run either `quiz.py` or `project.py` via terminal or IDE to start using the application, but
-consider that you can't play quiz if there is no `dictionary.csv` file or it contains less than 6 words.
+consider that you can't play quiz if there is no `dictionary.csv` file, or it contains less than 6 words.
 `test_project.py` contains unit tests for testing the application. You can add custom tests there.
 
 ### Starting via terminal
@@ -99,10 +99,10 @@ class works with `dictionary.csv` file which must be in the same directory. If t
 automatically. It contains the following public methods:
 
 1. `add_word()` method adds the given word with its translation and usage example to the dictionary and returns True if
-   the word was added else returns False. This method ignores the dublicate words
+   the word was added else returns False. This method ignores the duplicate words
 
 2. `remove_word()` method removes the word with its translation and usage examples from the dictionary. Returns False if
-   the deletion was not successfull
+   the deletion was not successful
 
 3. `get_translation()` method retrieves the translation and usage examples of the given word and returns a dictionary
    with keys `Translation` and `Examples`
@@ -140,8 +140,8 @@ After typing `translation` or `match` the corresponded mode will be started.
 
 ### Translate mode
 
-In the `translation mode` you will get a random word from dictionary untill you type `finish`.
-After finishing you will the count of correct and incorrect answers:
+In the `translation mode` you will get a random word from dictionary until you type `finish`.
+After, finishing you will the count of correct and incorrect answers:
 
 ```chatinput
 You got 1 points
